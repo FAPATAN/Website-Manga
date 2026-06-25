@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login</title>
+ <link rel="stylesheet" href="login.css">
+</head>
+<body>
+ 
+ <div class="wrapper">
+ <form id="loginForm" action="#">  <h2>Login</h2>
+ <div class="input-field">
+ <input type="text" id="loginEmail" required> <label>Enter your email</label>
+ </div>
+ <div class="input-field">
+ <input type="password" id="loginPassword" required>  <label>Enter your password</label>
+ </div>
+ <div class="forget">
+    <label for="remember">
+        <input type="checkbox" id="remember"> 
+        Remember me </label>
+    <a href="#">Forgot password?</a> </div>
+ <button type="submit">Log In</button>
+ <div class="register">
+ <p>Don't have an account? <a href="register.html">Register</a></p>
+ </div>
+ </form>
+ </div>
+
+<script>
+    // ดึง Element จาก DOM ด้วย ID 
+    const loginEmailField = document.getElementById('loginEmail');       // ช่องป้อนอีเมล
+    const loginPasswordField = document.getElementById('loginPassword');   // ช่องป้อนรหัสผ่าน
+    const loginForm = document.getElementById('loginForm');               // ฟอร์มล็อกอินทั้งหมด
+    
+    // ดึงข้อมูลที่ลงทะเบียนไว้จาก Local Storage (เพื่อใช้ในการเปรียบเทียบเท่านั้น)
+    const storedEmail = localStorage.getItem('registeredEmail');     // ดึงอีเมลที่บันทึกไว้จากการลงทะเบียน
+    const storedPassword = localStorage.getItem('registeredPassword'); // ดึงรหัสผ่านที่บันทึกไว้จากการลงทะเบียน
+
+    // เพิ่ม Event Listener สำหรับการส่งฟอร์ม (เมื่อผู้ใช้กดปุ่ม 'Log In')
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // ป้องกันการส่งฟอร์มแบบปกติของ HTML ซึ่งจะทำให้หน้าเว็บโหลดซ้ำ
+        
+        // ดึงค่าที่ผู้ใช้ป้อนและลบช่องว่างด้านหน้า/ด้านหลังออก (.trim())
+        const enteredEmail = loginEmailField.value.trim(); 
+        const enteredPassword = loginPasswordField.value.trim(); 
+        
+        // ตรวจสอบกับข้อมูลที่ลงทะเบียนไว้ใน Local Storage
+        if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+            // เงื่อนไข: อีเมลและรหัสผ่านตรงกับข้อมูลที่เก็บไว้
+            alert('Login สำเร็จ! กำลังเข้าสู่หน้าหลัก...'); // แสดงข้อความแจ้งเตือนความสำเร็จ
+            
+            // เปลี่ยนเส้นทางไปยังหน้าหลัก Index.html
+            window.location.href = 'Index.html'; 
+
+        } else {
+            // เงื่อนไข: อีเมลหรือรหัสผ่านไม่ตรงกัน
+            alert('Login ไม่สำเร็จ! Email หรือ Password ไม่ถูกต้อง'); // แสดงข้อความแจ้งเตือนความล้มเหลว
+        }
+    });
+</script>
+</body>
+</html>

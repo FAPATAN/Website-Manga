@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY MANGA</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <span class="logo-sky">SKY</span> MANGA
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#">แนะนำ</a></li>
+            <li><a href="#">มาใหม่</a></li>
+            <li><a href="#">โปรโมชั่น</a></li>
+        </ul>
+    </nav>
+
+    <button class="cart-button" onclick="window.location.href='Cart.html'">
+            <span class="cart-icon"></span>
+            <span class="cart-text">ตะกร้า</span>
+    </button>
+
+    <div class="auth-links">
+        <a href="register.html" class="register">สมัครสมาชิก</a> |
+        <a href="login.html" class="login">เข้าสู่ระบบ</a>
+    </div>
+
+    <div class="search-manga">
+        <input type="text" placeholder="ค้นหามังงะที่ชอบเลย!">
+        <button>ภาษา TH</button>
+    </div>
+</header>
+
+<div class="featured-image1">
+    <img src="img/anime.webp" alt="One Piece" />
+</div>
+
+<main>
+    <div class="main-left">
+
+        <div class="carousel-container">
+            
+            <div class="slider-track"> 
+                
+                <div class="featured-slide">
+                    <div class="featured-content-left">
+                        <span class="latest">Popular</span>
+                        <div class="featured-text">
+                            <h1>Sakamoto Days</h1>
+                            <p>Yuto Suzuki</p>
+
+                            <button class="detail-button" onclick="window.location.href='Order.html' ">
+                                แสดงรายละเอียด
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="featured-image">
+                        <img src="img/sakamoto.webp" alt="Sakamoto Days" />
+                    </div>
+                </div> 
+
+                <div class="featured-slide">
+                    <div class="featured-content-left">
+                        <span class="latest">Popular</span>
+                        <div class="featured-text">
+                            <h1>Gachiakuta</h1>
+                            <p>Kei Urana</p>
+
+                            <button class="detail-button" onclick="window.location.href='URL_TO_SAKAMOTO_DETAILS'">
+                                แสดงรายละเอียด
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="featured-image">
+                        <img src="img/gachiakuta.webp" alt="Gachiakuta" />
+                    </div>
+                </div> 
+
+                <div class="featured-slide">
+                    <div class="featured-content-left">
+                        <span class="latest">Popular</span>
+                        <div class="featured-text">
+                            <h1>Dandadan</h1>
+                            <p>Yukinobu Tatsu</p>
+
+                            <button class="detail-button" onclick="window.location.href='URL_TO_SAKAMOTO_DETAILS'">
+                                แสดงรายละเอียด
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="featured-image">
+                        <img src="img/dandadan0.jpeg" alt="Dandadan" />
+                    </div>
+                </div> 
+
+            </div>
+
+            <button class="slider-btn prev-btn">❮</button>
+            <button class="slider-btn next-btn">❯</button>
+        </div>
+    
+        <div class="recommendation-header-container" style="margin-top: 50px;">
+            <h2 class="recommendation-title" >แนะนำสำหรับคุณ</h2>
+        </div>
+      
+        <div class="updates-grid">
+            <div class="update-card">
+                <img src="img/spyxfam.gif" alt="SPY x FAMILY" class="product-image-update-fix">
+                <h3 class="product-name">SPY x FAMILY เล่ม 1</h3>
+                <span class="author">Tatsuya Endo</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">69.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+            <div class="update-card">
+                <img src="img/Chainsaw Man.gif" alt="Chainsaw Man" class="product-image-update-fix">
+                <h3 class="product-name">Chainsaw Man เล่ม 1</h3>
+                <span class="author">Tatsuki Fujimoto</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">69.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+            <div class="update-card">
+                <img src="img/solo_leveling.webp" alt="Solo Leveling" class="product-image-update-fix">
+                <h3 class="product-name">Solo Leveling เล่ม 1</h3>
+                <span class="author">Chugong</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">275.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+            <div class="update-card">
+                <img src="img/Phantom Busters.gif" alt="Phantom Busters" class="product-image-update-fix">
+                <h3 class="product-name">Phantom Busters เล่ม 1</h3>
+                <span class="author">Neoshoco</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">115.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+            <div class="update-card">
+                <img src="img/Blue_period.gif" alt="Blue Period" class="product-image-update-fix">
+                <h3 class="product-name">Blue Period เล่ม 1</h3>
+                <span class="author">Tsubasa Yamaguchi</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">90.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+        </div>
+        
+        <div class="recommendation-header-container" style="margin-top: 50px;">
+            <h2 class="recommendation-title">มาใหม่</h2>
+        </div>
+
+        <div class="updates-grid">
+            
+            <div class="update-card">
+                <img src="img/WITCH WATCH.gif" alt="WITCH WATCH" class="product-image-update-fix">
+                <h3 class="product-name">WITCH WATCH เล่ม 1</h3>
+                <span class="author">Kenta Shinohara</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">90.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+            <div class="update-card">
+                <img src="img/KAGURABACHI.gif" alt="KAGURABACHI" class="product-image-update-fix">
+                <h3 class="product-name">KAGURABACHI เล่ม 1</h3>
+                <span class="author">Takeru Hokazono</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">99.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+            
+            <div class="update-card">
+                <img src="img/Akane-banashi.jpeg" alt="Akane-banashi" class="product-image-update-fix">
+                <h3 class="product-name">Akane-banashi เล่ม 1</h3>
+                <span class="author">Suenaga Yuki</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">382.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+            
+            <div class="update-card">
+                <img src="img/Nue's Exorcist.jpg" alt="Nue's Exorcist" class="product-image-update-fix">
+                <h3 class="product-name">Nue's Exorcist เล่ม 1</h3>
+                <span class="author">Akasaka Aka</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">341.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+            
+            <div class="update-card">
+                <img src="img/AO NO HAKO.gif" alt="AO NO HAKO" class="product-image-update-fix">
+                <h3 class="product-name">AO NO HAKO เล่ม 1</h3>
+                <span class="author">Kouji Miura</span>
+                <span class="publisher">Books</span>
+                <div class="rating"><span>☆☆☆☆☆ (0)</span></div>
+                <div class="price-section"><span class="current-price">125.00 บาท</span></div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+
+        </div>
+        </div> 
+
+    <aside class="sidebar">
+        <div class="widget section">
+            <div class="releases"><h3>มังงะติดอันดับ TOP 10</h3></div>
+            <div id="wpop-items">
+                <ul class="rank-list">
+
+                    <li>
+                        <img src="img/dadadan.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Dandadan</h2>
+                            <p class="author">Tatsuki Fujimoto</p>
+                            <p class="views">373,849</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/sakamoto.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Sakamoto Days</h2>
+                            <p class="author">Yuto Suzuki</p>
+                            <p class="views">317,249</p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <img src="img/jujutsu kaisen.gif" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Jujutsu Kaisen</h2>
+                            <p class="author">Gege Akutami</p>
+                            <p class="views">268,877</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/gachiakuta.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Gachiakuta</h2>
+                            <p class="author">Kei Urana</p>
+                            <p class="views">248,877</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/blue lock.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Blue Lock</h2>
+                            <p class="author">Muneyuki Kaneshiro</p>
+                            <p class="views">237,877</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/kaiju no.8.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Kaiju No.8</h2>
+                            <p class="author">Naoya Matsumoto</p>
+                            <p class="views">222,817</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/windbreaker.jpg" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Windbreaker</h2>
+                            <p class="author">Satoru Nii</p>
+                            <p class="views">208,157</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/mha.gif" class="rank-img">
+                        <div class="rank-info">
+                            <h2>My Hero Academia</h2>
+                            <p class="author">Kohei Horikoshi</p>
+                            <p class="views">188,877</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/demon slayer.gif" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Demon Slayer</h2>
+                            <p class="author">Koyoharu Gotouge</p>
+                            <p class="views">156,597</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <img src="img/gokurakugai.gif" class="rank-img">
+                        <div class="rank-info">
+                            <h2>Gokurakugai</h2>
+                            <p class="author">Yuto Sano</p>
+                            <p class="views">111,657</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<div class="footer-top">
+    <div class="container">
+        <div class="footer-top-con">
+            
+            <div class="footer-top-item">
+                <h4>เลือกหมวดหมู่</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">การ์ตูน</span>
+                    <span class="footer-link">นิตยสาร</span>
+                    <span class="footer-link">ทั่วไป</span>
+                    <span class="footer-link">หนังสือเสียง</span>
+                    <span class="footer-link">บุฟเฟ่ต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>บริการช่วยเหลือ</h4>
+                <div class="column-content">
+                    <span class="footer-link">สมัครสมาชิก</span>
+                    <span class="footer-link">เงื่อนไขในการใช้บริการ</span>
+                    <span class="footer-link">นโยบายความเป็นส่วนตัว</span>
+                    <span class="footer-link">แผนผังเว็บไซต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>เกี่ยวกับเรา</h4>
+                <div class="column-content">
+                    <span class="footer-link">ข่าวสารและกิจกรรม</span>
+                    <span class="footer-link">ติดต่อเรา</span>
+                    <span class="footer-link facebook-link"><span class="facebook-icon"></span></span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>กลุ่มธุรกิจในเครือ</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">Central</span>
+                    <span class="footer-link">OfficeMate</span>
+                    <span class="footer-link">B2S</span>
+                    <span class="footer-link">Power Buy</span>
+                    <span class="footer-link">Supersports</span>
+                    <span class="footer-link">Tops</span>
+                    <span class="footer-link">Hytexts</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <div class="footer-bottom">
+        Copyright 2025,all reserved
+    </div>
+
+
+<script>
+    const track = document.querySelector('.slider-track');
+    const slides = document.querySelectorAll('.featured-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    let currentIndex = 0;
+
+    function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+</script>
+</body>
+</html>

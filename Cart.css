@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* ใช้ border-box เพื่อให้ padding และ border ไม่เพิ่มขนาดรวมของ element */
+    box-sizing: border-box; 
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* สีพื้นหลังเข้ม */
+    color: #ffffff; /* สีข้อความหลัก */
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+/* Header (แถบนำทางด้านบน) */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    gap: 20px; /* ระยะห่างระหว่างองค์ประกอบหลัก */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.logo-sky {
+    color: #4fd5ec;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-manga input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search- button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* จัดรูปแบบปุ่มโดยรวม */
+.cart-button {
+    display: inline-flex; /* ใช้ flexbox เพื่อจัดเรียงไอคอนและข้อความในแนวนอน */
+    align-items: center; /* จัดให้ไอคอนและข้อความอยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้ามีพื้นที่เหลือ) */
+    
+    background-color: #303030; 
+    color: white; /* สีข้อความและไอคอน */
+    font-family: 'Arial', sans-serif; /* เลือก font ที่ต้องการ หรือ font ของระบบ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    
+    padding: 10px 25px; /* ระยะห่างภายในปุ่ม (บน-ล่าง 10px, ซ้าย-ขวา 25px) */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 8px; /* ความโค้งมนของมุมปุ่ม */
+    cursor: pointer; /* แสดงรูปมือเมื่อชี้ */
+    text-decoration: none; 
+    
+    margin-left: auto;
+}
+
+
+/* จัดรูปแบบไอคอนรถเข็น */
+.cart-icon {
+    display: inline-block;
+    width: 24px; /* ขนาดของไอคอน */
+    height: 24px; /* ขนาดของไอคอน */
+    margin-right: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    
+    /* ไอคอนรถเข็นแบบ SVG (สีขาว) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L23 6H6V4h14.85l-3.9 7H7L5.6 5H1zm16 13c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+    background-size: contain; /* ปรับขนาดให้พอดีกับพื้นที่ */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* จัดรูปแบบข้อความ */
+.cart-text {
+    line-height: 1; /* ช่วยจัดแนวตั้งของข้อความให้ดีขึ้น */
+}
+
+.auth-links {
+    /* จัดชิดขวาของ Header */
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap;
+}
+
+.auth-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ส่วนของหน้าตะกร้าสินค้า */
+.cart-page-content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto; /* จัดกึ่งกลางหน้าจอ */
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.cart-subtitle {
+    text-align: center;
+    font-size: 1em;
+    color: #fffefe;
+    margin-bottom: 20px;
+}
+
+/* รายการสินค้า */
+.cart-items-list {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 0; /* ลบ margin-left เดิม */
+}
+
+.item-cover-image {
+    width: 40px; /* ขนาดรูปภาพหน้าปก */
+    height: 60px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #f0f0f0;
+    margin: 0;
+    font-size: 0.95em;
+    /* ตัวอย่าง: Sakamoto Days (x1) */
+}
+
+.item-price {
+    color: #ffffff; 
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+}
+
+.item-checkbox {
+    margin-right: 10px;
+}
+
+.delete-btn {
+    background-color: #f7f7f7;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    white-space: nowrap; /* ไม่ให้ข้อความ 'ลบ' ขึ้นบรรทัดใหม่ */
+}
+
+.delete-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Checkbox 'เลือกทั้งหมด' */
+.select-all-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 1em;
+    color: #ffffff;
+}
+
+#select-all {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+}
+
+.continue-shopping-link {
+    display: block;
+    text-align: center;
+    color: #ffffff; 
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.continue-shopping-link:hover {
+    text-decoration: underline;
+}
+
+/* สรุปยอดชำระเงิน */
+.checkout-summary {
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.total-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.total-value {
+    color: #ffffff; 
+}
+
+.checkout-btn {
+    background-color: #ffd24d; 
+    color: rgb(29, 29, 29);
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80%; /* ให้ปุ่มกว้างขึ้น */
+}
+
+.checkout-btn:hover {
+    background-color: #ffffff;
+}
+
+.cart-separator {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.delete-btn {
+    background-color: transparent; /* พื้นหลังโปร่งใส */
+    color: #ff4d4d; /* สีแดงสำหรับข้อความลบ */
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-left: 10px; /* เว้นระยะจากราคารวม */
+    white-space: nowrap;
+}
+
+.delete-btn:hover {
+    text-decoration: underline;
+}
+
+/* จัดกลุ่มราคากับปุ่มลบ */
+.item-price-and-action {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+/* ปรับราคาเพื่อให้ปุ่มลบสามารถแสดงอยู่ข้างๆ ได้ */
+.item-total-price {
+    font-weight: bold;
+    color: #ffffff; /* หรือสีเดียวกับยอดชำระ */
+    font-size: 1.1em;
+}
+
+/* ส่วนท้ายของเว็บ */
+.footer-top{
+    margin-top: 2rem;
+    /* เพิ่ม padding ด้านข้าง */
+    padding: 3rem 20px; 
+    background-color: #141313;
+    color: #fff;
+}
+
+.footer-top .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top-con{
+    display: grid;
+    /* เปลี่ยนเป็น 4 คอลัมน์สำหรับกลุ่มลิงก์ */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    column-gap: 2rem;
+}
+
+.footer-top-item-con{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.footer-top-item-con .date{
+    background-color: #fff;
+    color: #141313;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer-top-item:nth-child(2) h4,
+.footer-top-item:nth-child(3) h4{ 
+    margin-bottom: 1rem;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.footer-bottom{
+    background-color: #eae4e4;
+    padding: 1rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.9em;
+}
+
+footer-link {
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    cursor: pointer;
+    /* *** เพิ่ม: ลบเส้นขีดใต้ลิงก์เริ่มต้น *** */
+    text-decoration: none; 
+    /* *** เพิ่ม: Transition เพื่อให้เกิดเส้นขีดอย่างนุ่มนวล *** */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* *** ส่วนที่สำคัญ: สไตล์เมื่อเอาเมาส์ไปวาง (Hover State) *** */
+.footer-link:hover {
+    color: #ffffff; /* เปลี่ยนเป็นสีขาวสว่างเมื่อ Hover */
+    text-decoration: underline; /* เพิ่มเส้นขีดใต้ข้อความ */
+}

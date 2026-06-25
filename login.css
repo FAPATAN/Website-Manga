@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("img/anime.webp"), #000;
+  background-position: center;
+  background-size: cover;
+}
+.wrapper {
+  width: 400px;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  background-color: rgba(0, 0, 0, 0.75); /* เปลี่ยนสีดำทึบให้เป็นดำโปร่งแสง */
+    
+  /* เพิ่มขอบมนหรือเงาให้กล่อง Login ดูโดดเด่นขึ้น */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* เพิ่มเงาขาวอ่อนๆ */ 
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+#remember {
+  accent-color: #fff;
+
+}
+.forget {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  margin: 15px 0 25px; 
+  color: #fff;
+  font-size: 0.9em;
+}
+
+/* ปรับปรุงการจัดวาง Checkbox ให้อยู่ชิดข้อความ */
+.forget label {
+  display: flex; /* ทำให้ Checkbox และข้อความอยู่ชิดกัน */
+  align-items: center;
+  gap: 5px; /* เพิ่มระยะห่างเล็กน้อยระหว่าง input และข้อความ "Remember me" */
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none; 
+}
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+.wrapper a:hover {
+  text-decoration: underline;
+}
+button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #fff;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  /* เปลี่ยนจาก space-between เป็น flex-start เพื่อไม่ให้ข้อความถูกดันไปสุดขอบ */
+  justify-content: flex-start; 
+  margin: 25px 0 35px 0;
+  color: #fff;
+}
+
+.checkbox-field input[type="checkbox"] {
+  /* เพิ่มระยะห่างทางขวาให้กับ Checkbox */
+  margin-right: 10px; 
+  accent-color: #fff;
+}

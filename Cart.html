@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Cart.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-sky">SKY</span> MANGA
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="#">แนะนำ</a></li>
+                <li><a href="#">มาใหม่</a></li>
+                <li><a href="#">โปรโมชั่น</a></li>
+            </ul>
+        </nav>
+
+        <button class="cart-button">
+                <span class="cart-icon"></span>
+                <span class="cart-text">ตะกร้า</span>
+        </button>
+
+        <div class="auth-links">
+            <a href="register.html" class="register">สมัครสมาชิก</a> |
+            <a href="login.html" class="login">เข้าสู่ระบบ</a>
+          
+        </div>
+
+         <div class="search-manga">
+            <input type="text" placeholder="ค้นหามังงะที่ชอบเลย!">
+            <button>ภาษา TH</button>
+        </div>
+
+    </header>
+
+    <main class="cart-page-content">
+    <div class="cart-container">
+        <h1 class="cart-title">ตะกร้า</h1>
+        <p class="cart-subtitle">เลือกหนังสือที่ต้องการชำระเงิน</p>
+
+        <div id="cart-items-container" class="cart-items-list">
+            </div>
+        
+        <hr class="cart-separator">
+
+        <div class="select-all-container">
+            <input type="checkbox" id="select-all" checked>
+            <label for="select-all">เลือกทั้งหมด</label>
+        </div>
+
+        <a href="#" class="continue-shopping-link">เลือกซื้อหนังสือเล่มอื่นต่อ</a>
+
+        <div class="checkout-summary">
+            <div class="total-display">
+                <span class="total-label">ยอดชำระ: ฿</span>
+                <span id="total-amount" class="total-value">0</span> 
+                </div>
+            <button class="checkout-btn">ไปหน้าชำระเงิน</button>
+        </div>
+    </div>
+</main>
+
+
+ <div class="footer-top">
+    <div class="container">
+        <div class="footer-top-con">
+            
+            <div class="footer-top-item">
+                <h4>เลือกหมวดหมู่</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">การ์ตูน</span>
+                    <span class="footer-link">นิตยสาร</span>
+                    <span class="footer-link">ทั่วไป</span>
+                    <span class="footer-link">หนังสือเสียง</span>
+                    <span class="footer-link">บุฟเฟ่ต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>บริการช่วยเหลือ</h4>
+                <div class="column-content">
+                    <span class="footer-link">สมัครสมาชิก</span>
+                    <span class="footer-link">เงื่อนไขในการใช้บริการ</span>
+                    <span class="footer-link">นโยบายความเป็นส่วนตัว</span>
+                    <span class="footer-link">แผนผังเว็บไซต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>เกี่ยวกับเรา</h4>
+                <div class="column-content">
+                    <span class="footer-link">ข่าวสารและกิจกรรม</span>
+                    <span class="footer-link">ติดต่อเรา</span>
+                    <span class="footer-link facebook-link"><span class="facebook-icon"></span></span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>กลุ่มธุรกิจในเครือ</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">Central</span>
+                    <span class="footer-link">OfficeMate</span>
+                    <span class="footer-link">B2S</span>
+                    <span class="footer-link">Power Buy</span>
+                    <span class="footer-link">Supersports</span>
+                    <span class="footer-link">Tops</span>
+                    <span class="footer-link">Hytexts</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+    Copyright 2025,all reserved
+</div>
+
+
+
+    <script src="Cart.js"></script>
+
+
+
+</body>
+</html>
+    

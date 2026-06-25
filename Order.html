@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title title>SKY MANGA</title>
+    <link rel="stylesheet" href="Order.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="logo-sky">SKY</span> MANGA
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Index.html">หน้าแรก</a></li>
+                <li><a href="#">แนะนำ</a></li>
+                <li><a href="#">มาใหม่</a></li>
+                <li><a href="#">โปรโมชั่น</a></li>
+            </ul>
+        </nav>
+
+        <button class="cart-button" onclick="window.location.href='Cart.html'">
+            <span class="cart-icon"></span>
+            <span class="cart-text">ตะกร้า</span>
+        </button>
+
+        <div class="auth-links">
+            <a href="register.html" class="register">สมัครสมาชิก</a> |
+            <a href="login.html" class="login">เข้าสู่ระบบ</a>
+          
+        </div>
+
+         <div class="search-manga">
+            <input type="text" placeholder="ค้นหามังงะที่ชอบเลย!">
+            <button>ภาษา TH</button>
+        </div>
+        
+    </header>
+
+    
+
+<div class="manga-page">
+    <div class="manga-header">
+        <div class="cover-image-container">
+            <img src="img/sakamoto.jpg" alt="sakamoto" class="cover-image">
+        </div>
+        <!-- เอาแค่เฉพาะอันนี้เท่านั้นที่กด Add to Cart แล้วไปหน้าตะกร้า index4 -->
+        <div class="manga-details">
+            <h1 class="title">Sakamoto Days</h1>
+            <p class="author">Yuto Suzuki</p>
+            <span class="rating-tag">Teen</span>
+            
+            <p class="summary-text">ซาคาโมโตะ ทาโร่ชายร่างท้วมเปิดร้านขายของชำอยู่ในเมืองทว่าตัวจริงของเขาคืออดีตนักฆ่าในตำนานผู้เป็นทั้งที่หวั่นเกรงและที่หลงใหลขององค์กรชั่วร้ายทั้งหลาย!!
+                     ชีวิตในแต่ละวันของซาคาโมโตะที่ต้องคอยปกป้องครอบครัวจากอันตรายที่คืบคลานเข้ามาจะเป็นเช่นไรกันนะ...!?
+                     ได้เวลาเปิดม่านการ์ตูนแอคชั่นแนวใหม่ที่ผสมผสานการต่อสู้และคอเมดี้เข้าไว้ด้วยกันแล้ว!!
+             </p>
+            
+            <div class="product-actions">
+    
+        <div class="price-display">
+            
+            <span class="price-value">125 THB</span> 
+        </div>
+
+
+           <button class="add-to-list-btn" id="add-sakamoto-btn">
+                     Add To Cart
+            </button>
+
+       
+            <img src="img/hwhite.png" alt="image" style="width: 24px; height: 24px; vertical-align: middle;">
+
+        </div>
+    </div>
+    
+    <div class="background-art">
+        </div>
+</div>
+
+
+
+<div class="additional-information-grid additional-information">
+    
+    <div class="additional-information-item">
+        <div>จำนวนหน้า</div>
+        <div class="icon-wrapper">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path d="M514.91 32h-.16c-24.08.12-144.75 8.83-219.56 48.09-4.05 2.12-10.33 2.12-14.38 0C205.99 40.83 85.32 32.12 61.25 32h-.16C27.4 32 0 58.47 0 91.01v296.7c0 31.41 25.41 57.28 57.85 58.9 34.77 1.76 122.03 8.26 181.89 30.37 5.27 1.95 10.64 3.02 16.25 3.02h64c5.62 0 10.99-1.08 16.26-3.02 59.87-22.11 147.12-28.61 181.92-30.37 32.41-1.62 57.82-27.48 57.82-58.89V91.01C576 58.47 548.6 32 514.91 32zM272 433c0 8.61-7.14 15.13-15.26 15.13-1.77 0-3.59-.31-5.39-.98-62.45-23.21-148.99-30.33-191.91-32.51-15.39-.77-27.44-12.6-27.44-26.93V91.01c0-14.89 13.06-27 29.09-27 19.28.1 122.46 7.38 192.12 38.29 11.26 5 18.64 15.75 18.66 27.84l.13 100.32V433zm272-45.29c0 14.33-12.05 26.16-27.45 26.93-42.92 2.18-129.46 9.3-191.91 32.51-1.8.67-3.62.98-5.39.98-8.11 0-15.26-6.52-15.26-15.13V230.46l.13-100.32c.01-12.09 7.4-22.84 18.66-27.84 69.66-30.91 172.84-38.19 192.12-38.29 16.03 0 29.09 12.11 29.09 27v296.7z"/>
+            </svg>
+        </div>
+        <div>170 หน้า</div>
+    </div>
+
+    <div class="additional-information-item">
+        <div>ประเภทสินค้า</div>
+        <div class="icon-wrapper">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M356 160H188c-6.6 0-12-5.4-12-12v-8c0-6.6 5.4-12 12-12h168c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12zm12 52v-8c0-6.6-5.4-12-12-12H188c-6.6 0-12 5.4-12 12v8c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12zm64.7 268h3.3c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H80c-44.2 0-80-35.8-80-80V80C0 35.8 35.8 0 80 0h344c13.3 0 24 10.7 24 24v368c0 10-6.2 18.6-14.9 22.2-3.6 16.1-4.4 45.6-.4 65.8zM128 384h288V32H128v352zm-96 16c13.4-10 30-16 48-16h16V32H80c-26.5 0-48 21.5-48 48v320zm372.3 80c-3.1-20.4-2.9-45.2 0-64H80c-64 0-64 64 0 64h324.3z"/>
+            </svg>
+        </div>
+        <div>
+            <a class="inline-block link-book-detail" href="">Books</a>
+        </div>
+    </div>
+
+    <div class="additional-information-item">
+        <div>ขนาด</div>
+        <div class="icon-wrapper">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M480 320H192V32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v448c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM32 32h128v64h-56c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h56v48h-56c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h56v48h-56c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h56v41.38l-128 128V32zm448 448H54.62l128-128H224v56c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-56h48v56c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-56h48v56c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-56h64v128z"/>
+            </svg>
+        </div>
+        <div>12.5 x 17.5 x 1.2 CM</div>
+    </div>
+
+    <div class="additional-information-item">
+        <div>น้ำหนัก</div>
+        <div class="icon-wrapper">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M448 64h-64.81C353.95 25.38 308.07 0 256 0s-97.95 25.38-127.19 64H64C28.71 64 0 92.71 0 128v320c0 35.29 28.71 64 64 64h384c35.29 0 64-28.71 64-64V128c0-35.29-28.71-64-64-64zM256 32c70.69 0 128 57.31 128 128s-57.31 128-128 128-128-57.31-128-128S185.31 32 256 32zm224 416c0 17.67-14.33 32-32 32H64c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h45.56C100.94 115.63 96 137.22 96 160c0 88.22 71.78 160 160 160s160-71.78 160-160c0-22.78-4.94-44.37-13.56-64H448c17.67 0 32 14.33 32 32v320zM256 256c26.47 0 48-21.53 48-48 0-13.92-6.05-26.36-15.54-35.13l30.24-70.57c3.48-8.11-.28-17.52-8.41-21-8.08-3.48-17.52.27-21 8.41l-30.26 70.6C223.57 158 208 188.65 208 208c0 26.47 21.53 48 48 48zm0-64c8.84 0 16 7.16 16 16s-7.16 16-16 16-16-7.16-16-16 7.16-16 16-16z"/>
+            </svg>
+        </div>
+        <div>0.187 KG</div>
+    </div>
+
+    <div class="additional-information-item">
+        <div>บาร์โค้ด</div>
+        <div class="icon-wrapper">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M0 448V64h18v384H0zm26.857-.273V64H36v383.727h-9.143zm27.143 0V64h8.857v383.727H54zm44.857 0V64h8.857v383.727h-8.857zm36 0V64h17.714v383.727h-17.714zm44.857 0V64h8.857v383.727h-8.857zm18 0V64h8.857v383.727h-8.857zm18 0V64h8.857v383.727h-8.857zm35.715 0V64h18v383.727h-18zm44.857 0V64h18v383.727h-18zm35.999 0V64h18.001v383.727h-18.001zm36.001 0V64h18.001v383.727h-18.001zm26.857 0V64h18v383.727h-18zm45.143 0V64h26.857v383.727h-26.857zm35.714 0V64h9.143v383.727H476zm18 .273V64h18v384h-18z"/>
+            </svg>
+        </div>
+        <div>3072308880018</div>
+    </div>
+</div>
+<div class="product-list-container">
+    <h2>สินค้าที่เกี่ยวข้อง: SAKAMOTO DAYS 1 <a href="#" class="view-all">ดูทั้งหมด ></a></h2>
+    
+    <div class="product-grid">
+        
+        <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto2.2.jpg" alt="SAKAMOTO DAYS เล่ม 2" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 2 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="current-price">125.00 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+        
+        <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto3.jpg" alt="SAKAMOTO DAYS เล่ม 3" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 3 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <span class="discount-badge">-5%</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="original-price">125.00</span>
+                    <span class="current-price">118.75 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+        
+         <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto4.jpg" alt="SAKAMOTO DAYS เล่ม 4" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 4 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <span class="discount-badge">-5%</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="original-price">125.00</span>
+                    <span class="current-price">118.75 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto5.jpg" alt="SAKAMOTO DAYS เล่ม 5" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 5 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <span class="discount-badge">-5%</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="original-price">125.00</span>
+                    <span class="current-price">118.75 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto6.jpg" alt="SAKAMOTO DAYS เล่ม 6" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 6 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <span class="discount-badge">-5%</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="original-price">125.00</span>
+                    <span class="current-price">118.75 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+
+        <div class="product-card special-edition">
+            <div class="product-info">
+                <img src="img/sakamoto7.jpg" alt="SAKAMOTO DAYS เล่ม 7" class="product-image">
+                <h3 class="product-name">SAKAMOTO DAYS เล่ม 7 </h3>
+                <span class="author">YUTO SUZUKI</span>
+                <span class="publisher">Books</span>
+                <span class="discount-badge">-5%</span>
+                <div class="rating">
+                    <span>☆☆☆☆☆ (0)</span>
+                </div>
+                <div class="price-section">
+                    <span class="original-price">125.00</span>
+                    <span class="current-price">118.75 บาท</span>
+                </div>
+                <a href="URL_ไปหน้าสั่งซื้อ" class="buy-button">Add to Cart</a>
+            </div>
+        </div>
+
+
+        </div> 
+    </div>
+
+    <div class="review-container">
+        <h2 class="section-title">รีวิว</h2>
+        <div class="review-content">
+
+            <div class="review-summary">
+                <div class="score-display">
+                    <span class="main-score">0.0</span>
+                    <div class="stars-line">
+                        <span class="stars-icon gray-stars">★★★★★</span> 
+                    </div>
+                </div>
+
+                <div class="rating-breakdown">
+                    <div class="rating-row">
+                        <span class="rating-level">5</span>
+                        <span class="star-label">★</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-level">4</span>
+                        <span class="star-label">★</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-level">3</span>
+                        <span class="star-label">★</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-level">2</span>
+                        <span class="star-label">★</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                    <div class="rating-row">
+                        <span class="rating-level">1</span>
+                        <span class="star-label">★</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer-review-detail no-review-state">
+                <p class="no-review-text">ยังไม่มีรีวิว</p>
+            </div>
+
+        </div>
+    </div>
+
+
+   <div class="footer-top">
+    <div class="container">
+        <div class="footer-top-con">
+            
+            <div class="footer-top-item">
+                <h4>เลือกหมวดหมู่</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">การ์ตูน</span>
+                    <span class="footer-link">นิตยสาร</span>
+                    <span class="footer-link">ทั่วไป</span>
+                    <span class="footer-link">หนังสือเสียง</span>
+                    <span class="footer-link">บุฟเฟ่ต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>บริการช่วยเหลือ</h4>
+                <div class="column-content">
+                    <span class="footer-link">สมัครสมาชิก</span>
+                    <span class="footer-link">เงื่อนไขในการใช้บริการ</span>
+                    <span class="footer-link">นโยบายความเป็นส่วนตัว</span>
+                    <span class="footer-link">แผนผังเว็บไซต์</span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>เกี่ยวกับเรา</h4>
+                <div class="column-content">
+                    <span class="footer-link">ข่าวสารและกิจกรรม</span>
+                    <span class="footer-link">ติดต่อเรา</span>
+                    <span class="footer-link facebook-link"><span class="facebook-icon"></span></span>
+                </div>
+            </div>
+
+            <div class="footer-top-item">
+                <h4>กลุ่มธุรกิจในเครือ</h4>
+                <div class="column-content">
+                    <br>
+                    <span class="footer-link">Central</span>
+                    <span class="footer-link">OfficeMate</span>
+                    <span class="footer-link">B2S</span>
+                    <span class="footer-link">Power Buy</span>
+                    <span class="footer-link">Supersports</span>
+                    <span class="footer-link">Tops</span>
+                    <span class="footer-link">Hytexts</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+    Copyright 2025,all reserved
+</div>
+
+</body>
+<script src="Cart.js"></script>
+</html>

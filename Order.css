@@ -1,0 +1,658 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* ใช้ border-box เพื่อให้ padding และ border ไม่เพิ่มขนาดรวมของ element */
+    box-sizing: border-box; 
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* สีพื้นหลังเข้ม */
+    color: #ffffff; /* สีข้อความหลัก */
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.breadcrumb {
+    padding: 10px 20px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Header (แถบนำทางด้านบน) */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    gap: 20px; /* ระยะห่างระหว่างองค์ประกอบหลัก */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.logo-sky {
+    color: #4fd5ec;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.search-manga input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search- button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* จัดรูปแบบปุ่มโดยรวม */
+.cart-button {
+    display: inline-flex; /* ใช้ flexbox เพื่อจัดเรียงไอคอนและข้อความในแนวนอน */
+    align-items: center; /* จัดให้ไอคอนและข้อความอยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดให้อยู่กึ่งกลางแนวนอน (ถ้ามีพื้นที่เหลือ) */
+    
+    background-color: #303030; /* สีเขียวของปุ่ม */
+    color: white; /* สีข้อความและไอคอน */
+    font-family: 'Arial', sans-serif; /* เลือก font ที่ต้องการ หรือ font ของระบบ */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    
+    padding: 10px 25px; /* ระยะห่างภายในปุ่ม (บน-ล่าง 10px, ซ้าย-ขวา 25px) */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 8px; /* ความโค้งมนของมุมปุ่ม */
+    cursor: pointer; /* แสดงรูปมือเมื่อชี้ */
+    text-decoration: none; 
+    
+    margin-left: auto;
+}
+
+
+/* จัดรูปแบบไอคอนรถเข็น */
+.cart-icon {
+    display: inline-block;
+    width: 24px; /* ขนาดของไอคอน */
+    height: 24px; /* ขนาดของไอคอน */
+    margin-right: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    
+    /* ไอคอนรถเข็นแบบ SVG (สีขาว) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L23 6H6V4h14.85l-3.9 7H7L5.6 5H1zm16 13c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+    background-size: contain; /* ปรับขนาดให้พอดีกับพื้นที่ */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* จัดรูปแบบข้อความ */
+.cart-text {
+    line-height: 1; /* ช่วยจัดแนวตั้งของข้อความให้ดีขึ้น */
+}
+
+.auth-links {
+    /* จัดชิดขวาของ Header */
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap;
+}
+
+.auth-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Manga Page & Header (ส่วนข้อมูลหลัก) */
+/* Container หลักของหน้า - ใช้ Max-Width และจัดกึ่งกลาง */
+.manga-page,
+.additional-information-grid,
+.product-list-container,
+.review-container,
+.footer-top .container { 
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+
+/* ส่วนหัวที่แสดงข้อมูลหลักและภาพปก */
+.manga-header {
+    display: flex;
+    position: relative;
+    z-index: 10;
+    /* เพิ่ม Padding ด้านข้าง ให้เนื้อหาไม่ติดขอบจอ */
+    padding: 40px 20px; 
+}
+
+/* Container ของภาพปก */
+.cover-image-container {
+    flex-shrink: 0;
+    margin-right: 20px; /* ระยะห่างระหว่างปกกับรายละเอียด */
+    width: 200px;
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* ข้อมูลมังงะ */
+.manga-details {
+    flex-grow: 1;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.author {
+    font-size: 1em; 
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.rating-tag {
+    display: inline-block;
+    background-color: #d1752e;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.summary-text {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.price-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.add-to-list-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10; /* ให้แน่ใจว่าปุ่มอยู่เหนือ Element อื่น */
+    position: relative;
+}
+
+.add-to-list-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.background-art {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('sakamoto2.jpg'); 
+    background-color: #000000; 
+    background-size: cover; 
+    background-position: center right; 
+    opacity: 0.2; 
+    z-index: 5;
+    border-radius: 20px;
+}
+
+/* Additional Information Grid (ตารางรายละเอียด) */
+.additional-information-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 15px; 
+    /* เพิ่ม Padding ด้านข้าง */
+    padding: 10px 20px; 
+    background-color: #121212;
+    color: #ffffff; 
+    text-align: center;
+    margin-top: 10px;
+}
+
+.additional-information-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 5px 0;
+}
+
+.additional-information-item > div:first-child {
+    font-weight: normal;
+    color: #fdfdfd;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+    height: 30px;
+}
+
+.icon-wrapper {
+    margin-bottom: 5px;
+}
+
+.icon-svg {
+    width: 24px; 
+    height: 24px;
+    fill: #fffdfd;
+}
+
+.additional-information-item > div:last-child {
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 0.9em; 
+}
+
+.link-book-detail {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.additional-information-grid.additional-information {
+    border-top: 1px solid #121212; 
+    border-bottom: 1px solid #121212; 
+}
+
+@media (max-width: 768px) {
+    .additional-information-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Product List (สินค้าที่เกี่ยวข้อง) */
+.product-list-container {
+    max-width: 1200px; /* จำกัดความกว้างสูงสุดและจัดกึ่งกลาง */
+    margin: 0 auto;
+    font-family: sans-serif;
+    padding: 10px 0; 
+    background-color: #121212; 
+    overflow-x: scroll; 
+    white-space: nowrap; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.product-list-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-list-container h2 {
+    font-size: 18px;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; 
+    margin-bottom: 5px;
+    /* เพิ่ม padding-left ที่นี่ เพื่อให้หัวข้ออยู่แนวเดียวกับการ์ดชุดแรก */
+    padding-left: 20px;
+}
+
+.product-list-container h2 .view-all {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+/* ภาชนะหลักสำหรับรายการสินค้าทั้งหมด */
+.product-grid {
+  display: inline-flex; 
+    gap: 20px; 
+    /* 🔑 แก้ไข: เพิ่ม Padding ด้านข้าง 20px เพื่อให้การ์ดชุดแรกชิดซ้ายตรงกับหัวข้อ */
+    padding: 10px 20px;
+}
+
+/* 1. การ์ดสินค้าแต่ละชิ้น */
+.product-card {
+    flex: 0 0 auto; 
+    width: 190px;
+    /* เพิ่ม Padding ภายใน เพื่อไม่ให้เนื้อหาชิดขอบ */
+    padding: 12px; 
+    background-color: #00000093;
+    color: white; 
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    height: 470px;
+}
+
+.product-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; 
+}
+
+.product-image {
+    width: 100%;
+    height: 250px; 
+    display: block;
+    margin-bottom: 10px;
+    object-fit: cover; 
+    border-radius: 4px;
+}
+
+.product-name {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    height: 36px;
+    overflow: hidden;
+    margin: 0 0 5px 0;
+    line-height: 1.2;
+}
+
+.author, .publisher {
+    display: block;
+    font-size: 13px;
+    color: #b3b3b3; 
+    line-height: 1.2;
+}
+.publisher { margin-bottom: 5px; }
+
+.rating span {
+    font-size: 14px;
+    color: #b3b3b3; 
+    margin: 5px 0;
+    display: block;
+}
+
+.price-section {
+    margin-top: auto; 
+    display: flex; 
+    align-items: baseline; 
+    gap: 5px;
+    margin-bottom: 8px; 
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999; 
+    text-decoration: line-through;
+    display: inline-block; 
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: white; 
+    display: inline-block; 
+}
+
+.buy-button {
+    display: block;
+    width: 100%; 
+    padding: 8px 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333; 
+    background-color: #ffd24d;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 0; 
+}
+
+.discount-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #ff5722;
+    color: white;
+    font-size: 15px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+/* ส่วนรีวิว */
+.review-container {
+    max-width: 1200px;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #121212;
+}
+
+.section-title {
+    color: #007bff;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.review-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.review-summary {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid #131313;
+    border-radius: 5px;
+    background-color: #121212;
+}
+
+.main-score {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    line-height: 1;
+}
+
+.stars-line {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.stars-icon {
+    color: #cccccc; 
+    font-size: 1.2em;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #6c757d;
+}
+
+.rating-level {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.star-label {
+    color: #fbbc05;
+    margin-right: 10px;
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 10px;
+    border: none;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #ffc107; 
+    transition: width 0.3s ease;
+}
+
+.percentage {
+    font-size: 0.9em;
+    width: 50px;
+    text-align: right;
+}
+
+.customer-review-detail {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+    border: 1px solid #131313;
+    border-radius: 5px;
+    min-height: 250px;
+}
+
+.no-review-text {
+    font-size: 1.2em;
+    color: #7a7a7a;
+    font-weight: normal;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .review-content {
+        flex-direction: column;
+    }
+
+    .review-summary, .customer-review-detail {
+        min-width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Footer Section (ส่วนท้าย) */
+.footer-top{
+    margin-top: 2rem;
+    /* เพิ่ม padding ด้านข้าง */
+    padding: 3rem 20px; 
+    background-color: #141313;
+    color: #fff;
+}
+
+.footer-top .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top-con{
+    display: grid;
+    /* เปลี่ยนเป็น 4 คอลัมน์สำหรับกลุ่มลิงก์ */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    column-gap: 2rem;
+}
+
+.footer-top-item-con{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.footer-top-item-con .date{
+    background-color: #fff;
+    color: #141313;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer-top-item:nth-child(2) h4,
+.footer-top-item:nth-child(3) h4{ 
+    margin-bottom: 1rem;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.footer-bottom{
+    background-color: #eae4e4;
+    padding: 1rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.9em;
+}
+
+footer-link {
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    cursor: pointer;
+    /* *** เพิ่ม: ลบเส้นขีดใต้ลิงก์เริ่มต้น *** */
+    text-decoration: none; 
+    /* *** เพิ่ม: Transition เพื่อให้เกิดเส้นขีดอย่างนุ่มนวล *** */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* *** ส่วนที่สำคัญ: สไตล์เมื่อเอาเมาส์ไปวาง (Hover State) *** */
+.footer-link:hover {
+    color: #ffffff; /* เปลี่ยนเป็นสีขาวสว่างเมื่อ Hover */
+    text-decoration: underline; /* เพิ่มเส้นขีดใต้ข้อความ */
+}

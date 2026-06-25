@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+/* ตัวแปรสีของธีม */
+:root {
+    --bg-dark: #121212;
+    --bg-card: #1c1c1c;
+    --accent-red: #e53935;
+    --accent-sky: #4fd5ec; /* สีฟ้า/เขียวของธีม */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    gap: 20px; 
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.logo-sky {
+    color: var(--accent-sky);
+}
+/* เมนูนำทาง */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+/* Search Box และปุ่ม Search */
+.search-manga input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.search- button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* จัดรูปแบบปุ่มโดยรวม */
+.cart-button {
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+    
+    background-color: #303030; 
+    color: white; 
+    font-family: 'Arial', sans-serif; 
+    font-size: 16px; 
+    font-weight: bold; 
+    
+    padding: 10px 25px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    
+    margin-left: auto;
+    
+}
+
+/* จัดรูปแบบไอคอนรถเข็น */
+.cart-icon {
+    display: inline-block;
+    width: 24px; 
+    height: 24px; 
+    margin-right: 10px; 
+    
+    /* ไอคอนรถเข็นแบบ SVG (สีขาว) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03L23 6H6V4h14.85l-3.9 7H7L5.6 5H1zm16 13c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* จัดรูปแบบข้อความ */
+.cart-text {
+    line-height: 1; 
+}
+/* ลิงก์ Login/Signup */
+.auth-links {
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap;
+}
+
+.auth-links a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main Layout ครอบทั้งส่วน "เนื้อหา + sidebar" */
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Featured */
+.main-left {
+    flex: 3;
+}
+
+/*  Featured Manga (Slider/Carousel) Section */
+.featured-slide {
+    flex: 0 0 100%;    
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);    
+    box-sizing: border-box;
+    display: flex;    
+    align-items: stretch;
+    overflow: hidden;    
+    position: relative;    
+}
+/* ฝั่งซ้าย (ข้อมูลเรื่อง) */
+.featured-content-left {
+    flex: 1; 
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    
+    
+}
+/* ป้าย "Popular" */
+.featured .latest {
+    position: absolute;
+    top: 0;    
+    left: 0;
+    color: rgb(255, 255, 255);
+    padding: 8px 18px;    
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 0 0 8px 0; 
+    z-index: 10;
+}
+/* ข้อความภายใน */
+.featured-text {
+    position: static;
+    transform: none;
+    right: auto;
+    /* จัดเรียงภายใน Featured Text */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดกึ่งกลางชื่อเรื่อง ผู้แต่ง และปุ่ม */
+    padding: 50px 0; /* เพิ่ม padding เล็กน้อย */
+}
+/* ชื่อเรื่อง */
+.featured h1 {
+    font-size: 32px;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+}
+/* ผู้เขียน */
+.featured p {
+    color: #ccc;
+    font-size: 16px;
+    margin: 5px 0 10px 0;
+}
+/* ยอดวิว */
+.featured .views {
+    color: #f0f0f0;    
+    font-size: 16px;
+    font-weight: bold;
+}
+/* รูปภาพตรงปกเลื่อนได้หน้าหลัก */
+.featured-image {
+    flex: 1 0 100%;
+    overflow: hidden;    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+     margin-top: 1px;
+    max-width: 650px;       
+    display: block;
+      
+}ุ
+.featured-image{
+    flex-shrink: 0;    
+}
+/* ปรับรูปภาพ */
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    object-position: center 30%;
+}
+/* รูป banner หลักด้านหลัง */
+.featured-image1 {
+    position: absolute;    
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 384px; 
+    overflow: hidden;
+    z-index: -10;    
+}
+/* ปรับรูป banner หลักด้านหลัง */
+.featured-image1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+/* สไลด์รูป */
+.carousel-container {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden; 
+    position: relative; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 20px; 
+}
+
+.detail-button {
+    background-color: rgba(255, 255, 255, 0.1); /* พื้นหลังโปร่งใสสีขาว 10% */
+    color: #ffffff; /* ตัวอักษรสีขาว */
+    border: 1px solid #ffffff; /* เส้นขอบสีขาว 1px */
+    
+    /* การจัดรูปแบบทั่วไป */
+    padding: 10px 20px;
+    margin-top: 15px; /* เว้นระยะห่างจากชื่อผู้แต่ง */
+    font-size: 1em; /* ขนาดฟอนต์มาตรฐาน */
+    font-weight: bold;
+    border-radius: 5px; /* มุมโค้งมน */
+    cursor: pointer;
+    transition: background-color 0.3s; /* ใส่ Transition เพื่อให้ดูนุ่มนวลเวลา Hover */
+    display: inline-block; 
+    text-transform: uppercase; /* ทำให้เป็นตัวพิมพ์ใหญ่เพื่อความโดดเด่น */
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปวาง (Hover State) */
+.detail-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* พื้นหลังโปร่งใสสีขาว 20% เมื่อวางเมาส์ */
+}
+/* ทำสไลด์เลื่อนซ้าย/ขวา */
+.slider-track {
+    display: flex; 
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+/* ปุ่มลูกศรควบคุมซ้าย-ขวา */
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+
+.recommendation-title {
+    font-size: 20px; /* ขนาดข้อความที่เหมาะสม */
+    font-weight: 700;
+    color: #fff;
+    margin: 0; /* ลบ margin เดิมของ h2 */
+    padding: 0;
+}
+
+
+/* --- อัพเดตล่าสุด/Product Grid (โค้ดที่ถูกแก้ไขให้เป็น Grid Responsive) --- */
+.updates-grid {
+    /* ใช้ Grid Layout */
+    display: grid;
+    /* **สำคัญ**: กำหนดให้คอลัมน์ปรับตามหน้าจอ โดยมีขนาดเล็กสุด 160px */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+    gap: 15px; /* ระยะห่างระหว่างการ์ด */
+    
+    margin-top: 20px; 
+    /* ลบโค้ด Scrollable ออก */
+    overflow-x: unset; 
+    overflow-y: unset;
+    flex-wrap: unset;
+    padding-bottom: unset; 
+
+    
+}
+
+/* สไตล์พื้นฐานของ Product Card */
+.update-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center; 
+    transition: transform 0.2s;
+    /* ถ้าต้องการกรอบสีแดง ให้เพิ่ม: border: 2px solid var(--accent-red); */
+}
+
+/* สไตล์ Hover Effect (ทางเลือก) */
+.update-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 1. สไตล์รูปภาพปก */
+/* ใช้ class เฉพาะสำหรับรูปสินค้า */
+.update-card .product-image-update-fix {
+    width: 100%;
+    height: 220px; /* ความสูงของปกมังงะ */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+/* 2. สไตล์ข้อมูลสินค้า */
+.update-card h3.product-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 5px 0 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.update-card .author, 
+.update-card .publisher {
+    display: block;
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 1px;
+    line-height: 1.3;
+}
+
+.update-card .rating {
+    margin: 5px 0 10px 0;
+    font-size: 12px;
+    color: #ffc107;
+}
+
+/* 3. สไตล์ราคา */
+.update-card .price-section {
+    margin: 8px 0;
+}
+
+.update-card .current-price {
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+}
+
+/* 4. สไตล์ปุ่มซื้อ */
+.update-card .buy-button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #ffd24d; /* ใช้สีธีมหลัก */
+    color: var(--bg-dark);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.update-card .buy-button:hover {
+    background-color: #ffd24d;
+   
+}
+
+/* ซ่อนแท็ก "Latest 24hours" เดิม (ถ้ายังอยู่ใน HTML) */
+.update-card .latest {
+    display: none;
+}
+
+
+/* --- Sidebar (ไม่ต้องแก้มาก) --- */
+.sidebar {
+    background-color: #111111;    
+    color: #ffffff;
+    padding: 15px;
+}
+
+.releases h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.rank-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rank-list li {
+    display: flex;
+    align-items: center;
+    background: #1c1c1c;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.rank-list li:hover {
+    background: #2b2b2b;
+}
+
+
+.rank-img {
+    width: 60px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.rank-info h2 {
+    font-size: 16px;
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.rank-info .author {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 3px;
+}
+
+.rank-info .views {
+    font-size: 13px;
+    color: var(--accent-sky);
+    margin-top: 4px;
+}
+
+.footer-top{
+    margin-top: 2rem;
+    /* เพิ่ม padding ด้านข้าง */
+    padding: 3rem 20px; 
+    background-color: #141313;
+    color: #fff;
+    
+}
+
+.footer-top .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top-con{
+    display: grid;
+    /* เปลี่ยนเป็น 4 คอลัมน์สำหรับกลุ่มลิงก์ */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    column-gap: 2rem;
+}
+
+.footer-top-item-con{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.footer-top-item-con .date{
+    background-color: #fff;
+    color: #141313;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer-top-item:nth-child(2) h4,
+.footer-top-item:nth-child(3) h4{ 
+    margin-bottom: 1rem;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-link {
+    color: #a0a0a0;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.footer-bottom{
+    background-color: #eae4e4;
+    padding: 1rem;
+    text-align: center;
+    color: #333;
+    font-size: 0.9em;
+}
+
+footer-link {
+    color: #a0a0a0;
+     margin-bottom: 8px;
+    cursor: pointer;
+    /* *** เพิ่ม: ลบเส้นขีดใต้ลิงก์เริ่มต้น *** */
+    text-decoration: none; 
+    /* *** เพิ่ม: Transition เพื่อให้เกิดเส้นขีดอย่างนุ่มนวล *** */
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+/* *** ส่วนที่สำคัญ: สไตล์เมื่อเอาเมาส์ไปวาง (Hover State) *** */
+.footer-link:hover {
+    color: #ffffff; /* เปลี่ยนเป็นสีขาวสว่างเมื่อ Hover */
+    text-decoration: underline; /* เพิ่มเส้นขีดใต้ข้อความ */
+}

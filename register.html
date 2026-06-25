@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css"> 
+    <!--  CSS ภายใน <style> block สำหรับการปรับแต่งเฉพาะหน้า Register  -->
+    <style>
+        .checkbox-field {
+            display: flex;  /* ใช้ Flexbox เพื่อจัดองค์ประกอบภายใน */
+            align-items: center;  /* จัดให้องค์ประกอบอยู่กึ่งกลางตามแนวแกนตั้ง */
+            justify-content: flex-start;   /* จัดให้เริ่มต้นจากด้านซ้าย */
+            margin: 25px 0 35px 0;   
+            color: #fff;
+        }
+
+        .checkbox-field input[type="checkbox"] {
+            margin-right: 10px; 
+            accent-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="registrationForm" action="#"> 
+            <h2>Register</h2>
+
+            <div class="input-field">
+                <input type="text" id="name" required>
+                <label for="name">Enter your name</label>
+            </div>
+
+            <div class="input-field">
+                <input type="email" id="email" required>
+                <label for="email">Enter your email</label>
+            </div>
+            
+            <div class="input-field">
+                <input type="password" id="pswd" required>
+                <label for="pswd">Create password</label>
+            </div>
+
+            <div class="input-field">
+                <input type="password" id="cpswd" required>
+                <label for="cpswd">Confirm password</label>
+            </div>
+
+            <div class="checkbox-field">
+                <input type="checkbox" id="data-confirm" required>
+                <label for="data-confirm">ข้อมูลถูกต้อง</label>
+            </div>
+
+            <button type="submit" id="submitBtn">Register</button>
+
+            <div class="register">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // เพิ่ม Event Listener สำหรับการส่งฟอร์ม (เมื่อผู้ใช้กดปุ่ม 'Register')
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // ป้องกันการส่งฟอร์มแบบปกติของ HTML
+        
+        // ดึงค่าที่ผู้ใช้ป้อนจากช่องอีเมล, รหัสผ่าน, และยืนยันรหัสผ่าน
+        // ใช้ .trim() เพื่อลบช่องว่างด้านหน้า/ด้านหลังออก
+        let email = document.getElementById('email').value.trim(); 
+        let pswd = document.getElementById('pswd').value.trim();
+        let cpswd = document.getElementById('cpswd').value.trim();
+        
+        // ตรวจสอบว่ารหัสผ่านและยืนยันรหัสผ่านตรงกันหรือไม่
+        if (pswd !== cpswd) {
+            // เงื่อนไข: รหัสผ่านไม่ตรงกัน
+            alert('Password ไม่ถูกต้อง: รหัสผ่านทั้งสองช่องต้องตรงกัน'); // แจ้งเตือนความผิดพลาด
+        } else {
+            // เงื่อนไข: รหัสผ่านตรงกัน
+            alert('Password ถูกต้อง: กำลังบันทึกข้อมูลการลงทะเบียน...'); // แจ้งเตือนความสำเร็จเบื้องต้น
+            
+            // บันทึก Email และ Password ลง Local Storage 
+            // ข้อมูลนี้จะถูกนำไปใช้เปรียบเทียบในหน้า login.html
+            localStorage.setItem('registeredEmail', email);
+            localStorage.setItem('registeredPassword', pswd);
+            
+            // เปลี่ยนเส้นทางไปยังหน้า Login
+            window.location.href = 'login.html'; 
+        }
+    });
+    </script>
+</body>
+</html>
